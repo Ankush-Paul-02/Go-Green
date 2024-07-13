@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
@@ -63,12 +61,6 @@ class GoGreenGame extends FlameGame<GoGreenWorld>
         gameHeight,
       ),
     );
-  }
-
-  @override
-  FutureOr<void> onLoad() {
-    super.onLoad();
-    debugMode = true;
   }
 
   @override
