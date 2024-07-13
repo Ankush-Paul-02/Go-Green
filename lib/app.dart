@@ -1,22 +1,22 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:go_green/constant.dart';
-import 'package:go_green/go_green.dart';
+import 'package:go_green/game/go_green_game.dart';
 
-class GameApp extends StatefulWidget {
-  const GameApp({super.key});
+class App extends StatefulWidget {
+  const App({super.key});
 
   @override
-  State<GameApp> createState() => _GameAppState();
+  State<App> createState() => _AppState();
 }
 
-class _GameAppState extends State<GameApp> {
-  late final GoGreen game;
+class _AppState extends State<App> {
+  late final GoGreenGame game;
 
   @override
   void initState() {
     super.initState();
-    game = GoGreen();
+    game = GoGreenGame();
   }
 
   @override
