@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
@@ -6,7 +8,8 @@ import 'dart:math';
 import 'package:go_green/constant.dart';
 import 'package:go_green/game/go_green_world.dart';
 
-class GoGreenGame extends FlameGame<GoGreenWorld> with HorizontalDragDetector {
+class GoGreenGame extends FlameGame<GoGreenWorld>
+    with HorizontalDragDetector, HasCollisionDetection {
   final Random _random = Random();
   final int _numStars = 100;
   final List<Offset> _starPositions = [];
@@ -60,6 +63,12 @@ class GoGreenGame extends FlameGame<GoGreenWorld> with HorizontalDragDetector {
         gameHeight,
       ),
     );
+  }
+
+  @override
+  FutureOr<void> onLoad() {
+    super.onLoad();
+    debugMode = true;
   }
 
   @override
